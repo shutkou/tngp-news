@@ -1,0 +1,47 @@
+:host {
+  width: 100dvw;
+  background:
+    linear-gradient(355deg, rgba(215, 168, 89, 0.5), rgba(35, 58, 102, 0.6) 45.71%);
+  position: relative;
+  @apply flex flex-wrap md:flex-nowrap justify-around md:justify-between text-white gap-y-4 p-[14vw_2vw_5vw_2vw] md:p-[14vw_3.5vw_3vw_3.5vw] backdrop-blur-sm mt-3 gap-x-4
+}
+
+.footerBox {
+  @apply flex flex-col w-[80vw] md:max-w-[30vw] lg:max-w-[28vw] xl:max-w-[450px] justify-between
+}
+
+.footer-h3 {
+  @apply font-extralight tracking-wide duration-[250ms] ease-in
+}
+
+.typical-h3 {
+  @apply font-bebas text-[16px] md:text-[2vw] xl:text-3xl mb-2 text-center w-[100%] tracking-widest
+}
+
+.main-h3 {
+  @apply font-bebas text-[33px] md:text-[4.3vw] lg:text-[3.8vw] xl:text-6xl hover:opacity-60 hover:scale-[1.05] text-dY
+}
+
+.head-button {
+  @apply text-left text-[16px] md:text-[2.3vw] lg:text-[2.1vw] xl:text-4xl font-thin relative
+
+  after:content-[''] after:absolute after:bottom-[0.4vw] xl:after:bottom-[0.1vw] after:left-[44%] after:w-[0%] after:h-[0.12vw] after:bg-white after:duration-[300ms] after:rounded-lg
+
+  before:content-[''] before:absolute before:bottom-[0.4vw] xl:before:bottom-[0.1vw] before:w-[0%] before:right-[44%] before:h-[0.12vw] before:bg-white before:duration-[300ms] before:rounded-lg
+
+  hover:after:w-[55%] hover:before:w-[55%] rounded-xl duration-300 ease-in
+
+  hover:opacity-60 hover:scale-[1.05]
+}
+
+.special {
+  @apply h-min
+}
+
+.footerItemBox {
+  @apply flex flex-col w-[100%] gap-2
+}
+
+.footerItem {
+  @apply flex justify-between text-[11px] md:text-[1.1vw] xl:text-base font-thin
+}

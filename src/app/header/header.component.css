@@ -1,0 +1,94 @@
+:host {
+  width: 100%;
+  height: 100dvh;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  @apply lg:shadow-[0_2px_10px_6px_rgba(255,214,145,0.3)] shadow-[0_1px_6px_3px_rgba(255,214,145,0.3)]
+}
+
+.head-button {
+  @apply px-[1.2vw] xl:px-4 text-center text-[7.5vw] sm:text-[5.5vw] md:text-[4.8vw] lg:text-[3.2vw] xl:text-6xl font-extralight relative
+
+  after:content-[''] after:absolute after:bottom-[0.5vw] xl:after:bottom-[3px] after:left-[44%] after:w-[0%] after:h-[0.37vw] sm:after:h-[0.3vw] md:after:h-[0.25vw] lg:after:h-[0.17vw] xl:after:h-[3px] after:bg-dB after:duration-[300ms] after:rounded-lg
+
+  before:content-[''] before:absolute before:bottom-[0.5vw] xl:before:bottom-[3px] before:w-[0%] before:right-[44%] before:h-[0.37vw] sm:before:h-[0.3vw] md:before:h-[0.25vw] lg:before:h-[0.17vw] xl:before:h-[3px]  before:bg-dB before:duration-[300ms] before:rounded-lg
+
+  hover:after:w-[50%] hover:before:w-[50%] rounded-xl duration-300 ease-in;
+}
+
+.active {
+  @apply opacity-90 relative after:w-[55%] before:w-[55%] lg:after:w-[45%] lg:before:w-[45%] xl:after:w-[50%] xl:before:w-[50%]
+}
+
+.bottom-text {
+  @apply opacity-0 px-2 absolute hidden lg:flex lg:top-[45dvh] lg:text-[2.3vw] xl:text-4xl text-center tracking-wide font-OpenGost duration-500 scale-50 translate-y-10
+}
+
+
+/* when scroll === 0.65 dvh */
+.headBody-onTop {
+  @apply flex gap-[5vw]
+}
+
+.head-button.onTop {
+  @apply md:text-[30px] lg:text-[35px]
+  md:after:h-[0.13vw] xl:after:h-[2px]
+  md:before:h-[0.13vw] xl:before:h-[2px]
+  md:block xl:before:bottom-[1px] xl:after:bottom-[1px]
+  hidden
+}
+
+.onTop-Logo {
+  @apply text-[35px] sm:text-[40px] md:text-[45px] lg:text-[50px] tracking-wider translate-y-1
+}
+
+.block.hide-text {
+  @apply opacity-0 scale-50 translate-y-10
+}
+
+.block {
+  @apply opacity-100 scale-100 translate-y-0
+}
+
+
+
+/* burger Menu */
+.burgerMenu {
+  @apply hidden fixed right-[4px] sm:right-[6px] md:right-[8px] flex-col justify-center gap-2 sm:gap-[9px] md:gap-[10px] w-[42px] sm:w-[44px] md:w-[46px] h-10 sm:h-12 md:h-14 z-50 cursor-pointer
+}
+
+.burgerMenu.onTop {
+  @apply md:hidden flex
+}
+
+.rotateBurgerIconF {
+  @apply rotate-45 bg-dY border-[1px] border-dY w-9
+}
+
+.rotateBurgerIconS {
+  @apply -rotate-45 bg-dY border-[1px] border-dY w-9
+}
+
+.hiddenMenu {
+  @apply w-[0vw] h-[100dvh] fixed top-0 right-0 z-40 bg-black/60 overflow-hidden flex flex-col items-center justify-center gap-8
+}
+
+.hiddenMenu.openMenu {
+  @apply w-[100vw] backdrop-blur-xl
+}
+
+.menu-button {
+  @apply px-[1.2vw] text-center text-[9vw] sm:text-[6vw] font-extralight relative text-dY
+
+  after:content-[''] after:absolute after:bottom-[0.5vw] after:left-[44%] after:w-[0%] after:h-[0.37vw] lg:after:h-[0.17vw] after:bg-dY after:duration-[300ms] after:rounded-lg
+
+  before:content-[''] before:absolute before:bottom-[0.5vw] before:w-[0%] before:right-[44%] before:h-[0.37vw] lg:before:h-[0.17vw]  before:bg-dY before:duration-[300ms] before:rounded-lg
+
+  hover:after:w-[50%] hover:before:w-[50%] rounded-xl duration-300 ease-in;
+}
+
+.menu-button.active {
+  @apply pointer-events-none opacity-90 relative lg:after:w-[45%] lg:before:w-[45%] after:w-[55%] before:w-[55%]
+}

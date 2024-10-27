@@ -1,0 +1,62 @@
+<app-background id="backgroundBlock"></app-background>
+
+@for (news of newsBase; track news) {
+  <div class="news-container">
+    <h2 class="text-left mb-2 font-bebas text-black text-[22px] sm:text-[24px] md:text-[26px] lg:text-4xl">{{news.header}}</h2>
+    <span class="pl-[1px] tracking-wider mb-6 lg:mb-10 block font-bebas font-light text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px]">{{news.date}}</span>
+    <div class="text-justify font-light md:tracking-wide overflow-hidden duration-500 textBox
+    text-[14px] sm:text-[15px] md:text-[17px] lg:text-[19px] xl:text-[21px]
+    h-[68px] sm:h-[72px] md:h-[84px] lg:h-[92px] xl:h-[100px]">
+      @for (line of news.newsText; track line) {
+        @if (line.type === 'text') {
+          <p class="news-text" [class.font-medium]="line.isBold" [class.text-center]="line.isCenter">{{line.content}}</p>
+        }
+        @if (line.type === 'list') {
+          @if (!!line.heading) {
+            <p class="news-text" style="margin-bottom: 8px;">{{line.heading}}</p>
+          }
+          <ul class="news-text">
+            @for (listText of line.content; track listText) {
+              <li class="news-li">{{listText}}</li>
+            }
+          </ul>
+        }
+      }
+    </div>
+    <button class="underline hover:text-white duration-150 textButton text-[12px] lg:text-[17px]" (click)="changeBool(news.index)">Дальше..</button>
+    <div class="imageBox lg:mt-8 mt-4 lg:h-[30.1vw] lg:max-h-[385px] h-[37.1vw] flex flex-col flex-wrap justify-between content-baseline gap-x-2">
+      @for (image of news.images.slice(0,5); track image) {
+        <div (click)="zoomImg(news.index, image.i)" class="
+        lg:first:max-h-96  lg:first:max-w-96 lg:max-h-[187px] lg:max-w-[187px] lg:rounded-md lg:first:size-[30vw] lg:size-[15vw]
+        first:size-[37vw] size-[18vw] overflow-hidden flex justify-center items-center rounded-sm contrast-75 border-[1px] border-dB shadow-md shadow-[rgba(0,0,0,0.7)] hover:shadow-lg hover:shadow-dB duration-300 hover:scale-105 cursor-zoom-in">
+          <img [src]="image.src" [alt]="image.alt" class="min-h-full min-w-full">
+        </div>
+      }
+    </div>
+  </div>
+}
+
+
+
+<!-- unvisible block (zoomIN) -->
+<div class="flex flex-col h-screen items-center justify-center w-full fixed z-[100] backdrop-blur-lg bg-black/55 top-0 left-0" [class.hidden]='isHideDArkBlock' (click)="hideZoom($event)" id="dark">
+  <button class="fixed lg:top-5 lg:right-5 top-[1dvh] right-[1dvh] group">
+    <img src="assets/svg/multiplication.png" alt="close loop" class="group-hover:rotate-180 duration-500 lg:w-auto w-[26px]" title="close" id="closeButton" (click)="hideZoom($event)">
+  </button>
+  @for (news of newsBase; track news) {
+    <div class="flex overflow-x-scroll snap-x snap-mandatory w-[100vw] no-scrollbar relative h-[80dvh]" [class.hidden]="bools[news.index]">
+      @for (image of news.images; track image) {
+        <div class="flex-shrink-0 w-full snap-center flex justify-center items-center px-10">
+          <img [src]="image.src" [alt]="image.alt" class="lg:h-[80dvh] max-w-[90vw] max-h-[80dvh] lg:rounded-lg rounded-md">
+        </div>
+      }
+      <button class="flex justify-start items-center pl-[3vw] h-[80dvh] fixed top-[10dvh] left-0 w-[20vw] hover:bg-white/10 duration-200 rounded-md active:bg-white/25" (click)="swipeImg(news.index, -1)" title="back">
+        <img src="assets/svg/arrows.png" alt="arrow" class="lg:w-10 rotate-180">
+      </button>
+      <button class="flex justify-end items-center pr-[3vw] h-[80dvh] fixed top-[10dvh] right-0 w-[20vw] hover:bg-white/10 duration-200 rounded-md active:bg-white/25" (click)="swipeImg(news.index, 1)" title="next">
+        <img src="assets/svg/arrows.png" alt="arrow" class="lg:w-10">
+      </button>
+    </div>
+  }
+</div>
+

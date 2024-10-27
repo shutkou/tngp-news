@@ -1,0 +1,40 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  @apply pt-[10vw] xl:pt-16 gap-[10vw] lg:gap-[3vw]
+}
+
+
+.news-container {
+  @apply backdrop-blur-lg bg-white/30 rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.6)]
+  text-black p-4 lg:p-8 w-[90vw] lg:w-[75vw] xl:w-[1000px]
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.news-text {
+  @apply mb-[16px] sm:mb-[17px] md:mb-[19px] lg:mb-[22px] xl:mb-[24px]
+   leading-[17px] sm:leading-[18px] md:leading-[21px] lg:leading-[23px] xl:leading-[25px];
+}
+
+.news-li {
+  @apply mb-[7px] sm:mb-[8px] md:mb-[9px] lg:mb-[10px] xl:mb-[12px]
+}
+
+ul.news-text {
+  @apply mb-[20px] sm:mb-[24px] md:mb-[27px] lg:mb-[30px] xl:mb-[34px]
+}
+
+li {
+  @apply relative ml-5 before:content-[''] before:absolute before:-left-5
+  before:top-[0.47em] before:w-[0.4rem] before:h-[0.4rem] md:before:top-[0.57em] md:before:w-[0.5rem] md:before:h-[0.5rem]
+  before:border-[1px] md:before:border-2 before:border-black before:rounded-full
+}

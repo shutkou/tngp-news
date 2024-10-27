@@ -1,0 +1,16 @@
+:host {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: rgb(179, 148, 93)
+}
+
+.header-onTop {
+  @apply fixed h-10 sm:h-12 md:h-14 lg:h-16 top-0 left-0 right-0 bg-[linear-gradient(160deg,rgb(179,148,93),rgba(215,168,89)_75.71%)];
+}
+
+.body-onTop {
+  @apply relative top-[100dvh]
+}

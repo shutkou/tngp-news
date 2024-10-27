@@ -1,0 +1,7 @@
+<app-header [class.header-onTop]="isOnTop" id="header" class="z-[6] bg-[linear-gradient(160deg,rgba(35,58,102),rgba(215,168,89)_75.71%)]"></app-header>
+
+<div [class.body-onTop]="isOnTop" class="flex flex-col items-center pt-[6vw]" id="app-body">
+  <router-outlet></router-outlet>
+
+  <app-footer class="z-[5] relative"></app-footer>
+</div>

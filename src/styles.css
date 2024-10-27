@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Bebas Neue';
+  src: local('Bebas Neue Thin'), local('BebasNeue-Thin'), url('assets/fonts/bebasneue/bebasneuethin.woff2') format('woff2'), url('assets/fonts/bebasneue/bebasneuethin.woff') format('woff'), url('assets/fonts/bebasneue/bebasneuethin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Bebas Neue';
+  src: local('Bebas Neue Light'), local('BebasNeue-Light'), url('assets/fonts/bebasneue/bebasneuelight.woff2') format('woff2'), url('assets/fonts/bebasneue/bebasneuelight.woff') format('woff'), url('assets/fonts/bebasneue/bebasneuelight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Bebas Neue';
+  src: local('Bebas Neue Book'), local('BebasNeueBook'), url('assets/fonts/bebasneue/bebasneuebook.woff2') format('woff2'), url('assets/fonts/bebasneue/bebasneuebook.woff') format('woff'), url('assets/fonts/bebasneue/bebasneuebook.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Bebas Neue';
+  src: local('Bebas Neue Regular'), local('BebasNeueRegular'), url('assets/fonts/bebasneue/bebasneueregular.woff2') format('woff2'), url('assets/fonts/bebasneue/bebasneueregular.woff') format('woff'), url('assets/fonts/bebasneue/bebasneueregular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Bebas Neue';
+  src: local('Bebas Neue Bold'), local('BebasNeueBold'), url('assets/fonts/bebasneue/bebasneuebold.woff2') format('woff2'), url('assets/fonts/bebasneue/bebasneuebold.woff') format('woff'), url('assets/fonts/bebasneue/bebasneuebold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+
+
+
+
+
+@font-face {
+  font-family: 'Roboto';
+  src: local('Roboto Thin'), local('Roboto-Thin'), url('assets/fonts/roboto/Robotothin.woff2') format('woff2'), url('assets/fonts/roboto/Robotothin.woff') format('woff'), url('assets/fonts/roboto/Robotothin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Roboto';
+  src: local('Roboto Light'), local('Roboto-Light'), url('assets/fonts/roboto/Robotolight.woff2') format('woff2'), url('assets/fonts/roboto/Robotolight.woff') format('woff'), url('assets/fonts/roboto/Robotolight.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Roboto';
+  src: local('Roboto'), local('Roboto-Regular'), url('assets/fonts/roboto/Roboto.woff2') format('woff2'), url('assets/fonts/roboto/Roboto.woff') format('woff'), url('assets/fonts/roboto/Roboto.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Roboto';
+  src: local('Roboto Medium'), local('Roboto-Medium'), url('assets/fonts/roboto/Robotomedium.woff2') format('woff2'), url('assets/fonts/roboto/Robotomedium.woff') format('woff'), url('assets/fonts/roboto/Robotomedium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Roboto';
+  src: local('Roboto Bold'), local('Roboto-Bold'), url('assets/fonts/roboto/Robotobold.woff2') format('woff2'), url('assets/fonts/roboto/Robotobold.woff') format('woff'), url('assets/fonts/roboto/Robotobold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Roboto';
+  src: local('Roboto Black'), local('Roboto-Black'), url('assets/fonts/roboto/Robotoblack.woff2') format('woff2'), url('assets/fonts/roboto/Robotoblack.woff') format('woff'), url('assets/fonts/roboto/Robotoblack.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+
+
+
+@font-face {
+  font-family: 'OpenGost Type A TT';
+  src: local('OpenGost Type A TT Regular'), local('OpenGostTypeATT-Regular'), url('assets/fonts/opengosta/opengosttypeattregular.woff2') format('woff2'), url('assets/fonts/opengosta/opengosttypeattregular.woff') format('woff'), url('assets/fonts/opengosta/opengosttypeattregular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+
+
+
+@font-face {
+  font-family: 'ZnikomitNo25';
+  src: local('ZnikomitNo25'), url('assets/fonts/znikomit25/znikomitno25.woff2') format('woff2'), url('assets/fonts/znikomit25/znikomitno25.woff') format('woff'), url('assets/fonts/znikomit25/znikomitno25.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+
+
+
+* {
+  scroll-behavior:smooth;
+}
+
+body::-webkit-scrollbar {
+  width: 3px;
+}
+
+body::-webkit-scrollbar-thumb {
+  @apply bg-dY rounded-[20px] border-[3px_solid_#050c26];
+}
+
+body {
+  overflow-x: hidden;
+  width: 100dvw;
+}
+
+h2 {
+  @apply text-center text-2xl md:text-[26px] lg:text-3xl lg:mb-7 mb-4 font-normal text-dY
+}

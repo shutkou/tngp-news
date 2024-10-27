@@ -1,0 +1,53 @@
+<div class="lg:flex justify-center items-center gap-[9vw] top-0 sticky text-dB" [class.headBody-onTop]="isOnTop">
+  <div class="w-full flex justify-end" id="toNews">
+    <a routerLink="/news"
+      class="head-button"
+      routerLinkActive="active"
+      [class.onTop]="isOnTop">
+      News</a>
+  </div>
+  <h1 class="font-bebas font-light text-[20vw] sm:text-[14vw] md:text-[10vw] lg:text-[7vw] xl:text-9xl tracking-wide hover:opacity-30
+          hover:text-white lg:hover:scale-[1.05] duration-[350ms] ease-in"
+   [class.onTop-Logo]="isOnTop">
+    <a href="https://www.tonigroup.by">
+        ToniGroup.by
+      </a>
+  </h1>
+  <div class="w-full flex justify-start" id="toAbout">
+    <a routerLink="/about"
+      class="head-button"
+      routerLinkActive="active"
+      [class.onTop]="isOnTop"
+      >About</a>
+  </div>
+
+<div class="bottom-text" [class.hide-text]="isScrollHalf"
+       routerLinkActive="block" routerLink="/news">
+       Прочтите полезные статьи и интересные новости нашей компании
+</div>
+<div class="bottom-text" [class.hide-text]="isScrollHalf"
+       routerLinkActive="block" routerLink="/about">
+       Узнайте больше о нашей компании и наших партнерах
+</div>
+</div>
+
+<div class="burgerMenu" [class.onTop]="isSmallMenu" (click)="menuOpener()">
+  <span class="block w-full h-[2px] bg-dB duration-200" [class.blur-3xl]="isMenuOpen"></span>
+  <div class="relative h-[2px]">
+    <span class="block w-full h-[2px] bg-dB absolute duration-200" [class.rotateBurgerIconF]="isMenuOpen" [class.bg-dB]="isMenuClosen"></span>
+    <span class="block w-full h-[2px] bg-dB absolute duration-200" [class.rotateBurgerIconS]="isMenuOpen" [class.bg-dB]="isMenuClosen"></span>
+  </div>
+  <span class="block w-full h-[2px] bg-dB duration-200" [class.blur-3xl]="isMenuOpen"></span>
+</div>
+
+<div class="hiddenMenu duration-200" [class.openMenu]="isMenuOpen" (click)="menuOpener()">
+    <a routerLink="/news"
+      class="menu-button"
+      routerLinkActive="active">
+      News</a>
+    <a routerLink="/about"
+      class="menu-button"
+      routerLinkActive="active">
+      About</a>
+</div>
+

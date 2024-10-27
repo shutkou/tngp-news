@@ -1,0 +1,38 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: justify;
+  overflow: hidden;
+  @apply w-[95vw] md:w-[90vw] lg:w-[85vw] xl:w-[1200px] text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] xl:text-[22px] tracking-[1.7px] md:tracking-[2.2px] lg:tracking-[2.2px]
+}
+
+.blocks {
+  @apply items-center justify-center xl:w-full gap-8 lg:gap-14 font-extralight border-b-2 border-dY text-white xl:py-[60px]
+}
+
+.listBox {
+  @apply flex flex-col gap-y-5 w-[100%]
+}
+
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+
+li::before {
+  content: '';
+  position: absolute;
+  left: -1.5rem;
+  top: 0.57em;
+  width: 0.4rem;
+  height: 0.45rem;
+  background-color: rgb(215, 168, 89);
+  border-radius: 50%;
+}

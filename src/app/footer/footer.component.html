@@ -1,0 +1,55 @@
+<div class="footerBox items-center md:items-start pb-5 md:pb-0 border-b-[1px] border-dY md:border-b-0">
+  <h3 class="footer-h3 main-h3">
+    <a href="https://www.tonigroup.by">
+        ToniGroup.by
+      </a>
+  </h3>
+  <div class="flex flex-col">
+    <a routerLink="/news"
+    class="head-button">
+    News</a>
+    <a routerLink="/about"
+    class="head-button"
+    >About</a>
+  </div>
+</div>
+
+<div class="footerBox border-b-[1px] border-dY pb-5 md:border-b-0 md:pb-0">
+  <h3 class="footer-h3 typical-h3">Наш офис</h3>
+  <ul class="footerItemBox">
+    @for (info of footerInfoBase; track info) {
+      <li class="footerItem gap-2 group">
+        <span class="mr-4 flex gap-3 items-center" [class.special]="info.isSpecial">
+          <img [src]="info.iconSrc" alt="TG" class="h-[12px] md:h-[1.4vw] xl:h-5 group-hover:animate-bounce">
+          {{info.name}}
+        </span>
+        @if (info.value) {
+          <span [class.special]="info.isSpecial" class="text-right">{{info.value}}</span>
+        }
+      </li>
+    }
+  </ul>
+</div>
+
+<div class="footerBox">
+  <h3 class="footer-h3 typical-h3">Наши контакты</h3>
+  <ul class="footerItemBox">
+    @for (contact of contactsBase; track contact) {
+      <li class="footerItem group">
+        <span class="mr-4 flex gap-3 items-center">
+          <img [src]="contact.iconSrc" alt="TG" class="h-[12px] md:h-[1.4vw] xl:h-5 group-hover:animate-bounce">
+          {{contact.name}}
+        </span>
+        @if (contact.isLink) {
+          <a [href]="contact.linkUrl" class="relative
+          after:content-[''] after:absolute after:bottom-[0.25vw] after:left-[44%] after:w-[0%] after:h-[0.07vw] after:bg-white after:duration-[300ms] after:rounded-lg
+          before:content-[''] before:absolute before:bottom-[0.25vw] before:w-[0%] before:right-[44%] before:h-[0.07vw] before:bg-white before:duration-[300ms] before:rounded-lg
+          hover:after:w-[55%] hover:before:w-[55%] rounded-xl duration-300 ease-in hover:scale-[1.05]"
+          >{{contact.value}}</a>
+        } @else {
+          <span>{{contact.value}}</span>
+        }
+      </li>
+    }
+  </ul>
+</div>
