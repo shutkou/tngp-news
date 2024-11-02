@@ -20,6 +20,14 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
+## Test in browser
+
+#### angular website is served at:
+localhost:3000
+
+#### API endpoint:
+localhost:3000/api
+
 ## Run tests
 
 ```bash
