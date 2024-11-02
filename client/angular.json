@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ToniNews": {
+    "client": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,8 +17,14 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/toni-news",
-            "index": "src/index.html",
+            "outputPath": {
+              "base": "../public",
+              "browser": ""
+            },
+            "index": {
+              "input": "src/index.html",
+              "output": "index.hbs"
+            },
             "browser": "src/main.ts",
             "polyfills": [
               "zone.js"
@@ -28,13 +34,17 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "styles": [
-              "src/styles.css"
-            ],
+            "styles": ["src/styles.css"],
             "scripts": []
           },
           "configurations": {
             "production": {
+              "deployUrl": "/",
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
               "budgets": [
                 {
                   "type": "initial",
@@ -50,6 +60,7 @@
               "outputHashing": "all"
             },
             "development": {
+              "deployUrl": "/",
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
@@ -61,10 +72,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "ToniNews:build:production"
+              "buildTarget": "client:build:production"
             },
             "development": {
-              "buildTarget": "ToniNews:build:development"
+              "buildTarget": "client:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -72,7 +83,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "ToniNews:build"
+            "buildTarget": "client:build"
           }
         },
         "test": {
@@ -83,17 +94,29 @@
               "zone.js/testing"
             ],
             "tsConfig": "tsconfig.spec.json",
+            "karmaConfig": "karma.conf.js",
             "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
-            "styles": [
-              "src/styles.css"
-            ],
-            "scripts": []
+            "styles": [ "src/styles.css"],
+            "scripts": [],
+            "codeCoverageExclude": ["src/mocks/**"],
+            "codeCoverage": false
           }
         }
       }
+    }
+  },
+  "schematics": {
+    "@schematics/angular:component": {
+      "style": "css"
+    },
+    "@schematics/angular:directive": {
+      "standalone": false
+    },
+    "@schematics/angular:pipe": {
+      "standalone": false
     }
   }
 }

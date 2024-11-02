@@ -6,12 +6,12 @@
   "private": true,
   "license": "UNLICENSED",
   "workspaces": [
-    "../client"
+    "client"
   ],
   "scripts": {
-    "install:client": "npm install --prefix ../client package.json ../client",
+    "install:client": "npm install --prefix ./client package.json ./client",
     "install:server": "npm i",
-    "build": "nest build",
+    "build": "npm run build -w client && nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
     "start:dev": "nest start --watch",

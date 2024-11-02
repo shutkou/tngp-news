@@ -2,8 +2,6 @@
 /dist
 /node_modules
 /build
-/public
-.angular/
 
 # Logs
 logs
