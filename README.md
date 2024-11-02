@@ -40,3 +40,17 @@ $ npm run test:e2e
 # test coverage
 $ npm run test:cov
 ```
+
+## Deploy to hoster
+
+#### 1. create a release branch with dist/ folder files
+#### 2. on the hoster server:
+```bash
+$ cd home/tngp-news
+$ rm -rf dist/*
+$ cp -r dist-release/* dist/
+```
+#### 3. install dependencies via the pannel UI
+#### 4. restart the app via the pannel UI
+
+
