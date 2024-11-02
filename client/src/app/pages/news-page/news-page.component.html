@@ -41,7 +41,7 @@
 <!-- unvisible block (zoomIN) -->
 <div class="flex flex-col h-screen items-center justify-center w-full fixed z-[100] backdrop-blur-lg bg-black/55 top-0 left-0" [class.hidden]='isHideDArkBlock' (click)="hideZoom($event)" id="dark">
   <button class="fixed lg:top-5 lg:right-5 top-[1dvh] right-[1dvh] group">
-    <img src="assets/svg/multiplication.png" alt="close loop" class="group-hover:rotate-180 duration-500 lg:w-auto w-[26px]" title="close" id="closeButton" (click)="hideZoom($event)">
+    <img src="../../../assets/svg/multiplication.png" alt="close loop" class="group-hover:rotate-180 duration-500 lg:w-auto w-[26px]" title="close" id="closeButton" (click)="hideZoom($event)">
   </button>
   @for (news of newsBase; track news) {
     <div class="flex overflow-x-scroll snap-x snap-mandatory w-[100vw] no-scrollbar relative h-[80dvh]" [class.hidden]="bools[news.index]">
