@@ -1,27 +1,56 @@
-# ToniNews
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.8.
 
-## Development server
+## Project setup
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+```bash
+$ npm install
+$ npm run build
+```
 
-## Code scaffolding
+## Compile and run the project
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```bash
+# development
+$ npm run start
 
-## Build
+# watch mode
+$ npm run start:dev
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+# production mode
+$ npm run start:prod
+```
 
-## Running unit tests
+## Test in browser
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+#### angular website is served at:
+localhost:3000
 
-## Running end-to-end tests
+#### API endpoint:
+localhost:3000/api
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Run tests
 
-## Further help
+```bash
+# unit tests
+$ npm run test
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+# e2e tests
+$ npm run test:e2e
+
+# test coverage
+$ npm run test:cov
+```
+
+## Deploy to hoster
+
+#### 1. create a release branch with dist/ folder files
+#### 2. on the hoster server:
+```bash
+$ cd home/tngp-news
+$ rm -rf dist/*
+$ cp -r dist-release/* dist/
+```
+#### 3. install dependencies via the pannel UI
+#### 4. restart the app via the pannel UI
+
+
